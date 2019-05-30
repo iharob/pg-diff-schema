@@ -1,0 +1,2518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="compa@localhost">
+  <database-model serializer="dbm" dbms="POSTGRES" family-id="POSTGRES" format-version="4.14">
+    <root id="1">
+      <ServerVersion>11.2</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="compa">
+      <ObjectId>88196</ObjectId>
+      <StateNumber>376564</StateNumber>
+      <Owner>postgres</Owner>
+      <IntrospectionStateNumber>378287</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+      <Relations>sequence|table|88292|88288|2
+sequence|table|88300|88294|1
+sequence|table|88316|88306|1
+sequence|table|88358|88349|1
+sequence|table|88367|88360|1
+sequence|table|88383|88376|1
+sequence|table|88395|88391|1
+sequence|table|88397|88369|1
+sequence|table|88415|88399|1
+sequence|table|88417|88318|1
+sequence|table|88455|88446|1
+sequence|table|88460|88457|1
+sequence|table|88462|88328|1
+sequence|table|88472|88464|1
+sequence|table|88508|88502|1
+sequence|table|88524|88489|1
+</Relations>
+    </database>
+    <database id="3" parent="1" name="compa2">
+      <ObjectId>96544</ObjectId>
+      <StateNumber>378216</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="4" parent="1" name="compa_new">
+      <ObjectId>87619</ObjectId>
+      <StateNumber>376393</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="5" parent="1" name="compa_test">
+      <ObjectId>75281</ObjectId>
+      <StateNumber>355464</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="6" parent="1" name="midas">
+      <ObjectId>90091</ObjectId>
+      <StateNumber>377314</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="7" parent="1" name="midas2">
+      <ObjectId>89815</ObjectId>
+      <StateNumber>377284</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <database id="8" parent="1" name="postgres">
+      <ObjectId>74687</ObjectId>
+      <StateNumber>355206</StateNumber>
+      <Owner>postgres</Owner>
+    </database>
+    <role id="9" parent="1" name="compa">
+      <ObjectId>49759</ObjectId>
+      <Inherit>1</Inherit>
+      <CanLogin>1</CanLogin>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="10" parent="1" name="pg_execute_server_program">
+      <ObjectId>4571</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="11" parent="1" name="pg_monitor">
+      <ObjectId>3373</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="12" parent="1" name="pg_read_all_settings">
+      <ObjectId>3374</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="13" parent="1" name="pg_read_all_stats">
+      <ObjectId>3375</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="14" parent="1" name="pg_read_server_files">
+      <ObjectId>4569</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="15" parent="1" name="pg_signal_backend">
+      <ObjectId>4200</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="16" parent="1" name="pg_stat_scan_tables">
+      <ObjectId>3377</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="17" parent="1" name="pg_write_server_files">
+      <ObjectId>4570</ObjectId>
+      <Inherit>1</Inherit>
+      <ConnectionLimit>-1</ConnectionLimit>
+    </role>
+    <role id="18" parent="1" name="postgres">
+      <ObjectId>10</ObjectId>
+      <SuperRole>1</SuperRole>
+      <Inherit>1</Inherit>
+      <CreateRole>1</CreateRole>
+      <CreateDb>1</CreateDb>
+      <CanLogin>1</CanLogin>
+      <Replication>1</Replication>
+      <ConnectionLimit>-1</ConnectionLimit>
+      <BypassRls>1</BypassRls>
+    </role>
+    <schema id="19" parent="2" name="information_schema">
+      <ObjectId>12805</ObjectId>
+      <StateNumber>365</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="20" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+      <Comment>system catalog schema</Comment>
+      <StateNumber>358</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="21" parent="2" name="pg_temp_1">
+      <ObjectId>11804</ObjectId>
+      <StateNumber>120</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="22" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+      <Comment>reserved schema for TOAST tables</Comment>
+      <StateNumber>1</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="23" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11805</ObjectId>
+      <StateNumber>120</StateNumber>
+      <Owner>postgres</Owner>
+    </schema>
+    <schema id="24" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <Comment>standard public schema</Comment>
+      <StateNumber>376764</StateNumber>
+      <Owner>postgres</Owner>
+      <IntrospectionStateNumber>378288</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <access-method id="25" parent="2" name="btree">
+      <ObjectId>403</ObjectId>
+      <Comment>b-tree index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.bthandler</Handler>
+      <HandlerId>330</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="26" parent="2" name="hash">
+      <ObjectId>405</ObjectId>
+      <Comment>hash index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.hashhandler</Handler>
+      <HandlerId>331</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="27" parent="2" name="gist">
+      <ObjectId>783</ObjectId>
+      <Comment>GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.gisthandler</Handler>
+      <HandlerId>332</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="28" parent="2" name="gin">
+      <ObjectId>2742</ObjectId>
+      <Comment>GIN index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.ginhandler</Handler>
+      <HandlerId>333</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="29" parent="2" name="spgist">
+      <ObjectId>4000</ObjectId>
+      <Comment>SP-GiST index access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.spghandler</Handler>
+      <HandlerId>334</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <access-method id="30" parent="2" name="brin">
+      <ObjectId>3580</ObjectId>
+      <Comment>block range index (BRIN) access method</Comment>
+      <StateNumber>1</StateNumber>
+      <Handler>pg_catalog.brinhandler</Handler>
+      <HandlerId>335</HandlerId>
+      <Type>index</Type>
+    </access-method>
+    <extension id="31" parent="2" name="plpgsql">
+      <ObjectId>13086</ObjectId>
+      <Comment>PL/pgSQL procedural language</Comment>
+      <StateNumber>518</StateNumber>
+      <Version>1.0</Version>
+      <SchemaName>pg_catalog</SchemaName>
+      <SchemaId>11</SchemaId>
+    </extension>
+    <sequence id="32" parent="24" name="ActiveContest_Id_seq">
+      <ObjectId>88292</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376577</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="33" parent="24" name="AdminPermission_Id_seq">
+      <ObjectId>88300</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376580</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="34" parent="24" name="AdminUser_Id_seq">
+      <ObjectId>88316</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376585</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="35" parent="24" name="Audience_Id_seq">
+      <ObjectId>88358</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376596</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="36" parent="24" name="ChatMessage_Id_seq">
+      <ObjectId>88367</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376599</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="37" parent="24" name="CommunityPostComment_Id_seq">
+      <ObjectId>88383</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376603</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="38" parent="24" name="CommunityPostShare_Id_seq">
+      <ObjectId>88395</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376609</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="39" parent="24" name="CommunityPost_Id_seq">
+      <ObjectId>88397</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376611</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="40" parent="24" name="CompaUser_Id_seq">
+      <ObjectId>88415</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376615</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="41" parent="24" name="Contest_Id_seq">
+      <ObjectId>88417</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376800</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="42" parent="24" name="Notification_Id_seq">
+      <ObjectId>88455</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376624</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="43" parent="24" name="ParameterSet_Id_seq">
+      <ObjectId>88460</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376800</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="44" parent="24" name="Parameter_Id_seq">
+      <ObjectId>88462</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376800</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="45" parent="24" name="Prize_Id_seq">
+      <ObjectId>88472</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376632</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="46" parent="24" name="UsageEnum_Id_seq">
+      <ObjectId>88508</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376640</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <sequence id="47" parent="24" name="WalletTransaction2_Id_seq">
+      <ObjectId>88524</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376644</StateNumber>
+      <SequenceIdentity>1..2147483647</SequenceIdentity>
+      <CacheSize>1</CacheSize>
+      <DataType>integer</DataType>
+    </sequence>
+    <object-type id="48" parent="24" name="ContestStatus">
+      <ObjectId>88198</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376566</StateNumber>
+      <SubKind>enum</SubKind>
+      <SubCategory>enum</SubCategory>
+      <Labels>SCHEDULED
+STARTED
+FINISHED</Labels>
+    </object-type>
+    <object-type id="49" parent="24" name="NotificationGroups">
+      <ObjectId>88206</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376567</StateNumber>
+      <SubKind>enum</SubKind>
+      <SubCategory>enum</SubCategory>
+      <Labels>WEEKLY_COMPETITIONS
+DID_YOU_KNOW
+ENGAGEMENT
+OTHER</Labels>
+    </object-type>
+    <object-type id="50" parent="24" name="NotificationSubGroups">
+      <ObjectId>88216</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376568</StateNumber>
+      <SubKind>enum</SubKind>
+      <SubCategory>enum</SubCategory>
+      <Labels>PRIZES_AMOUNTS
+TIME_LEFT
+TOTAL_POINTS
+SPONSORED
+EDUCATION
+GAME_INFO
+AUTO_GENERATED
+MANUAL_GENERATED
+USER_GENERATED
+MULTIPLIER
+RANK_STATUS</Labels>
+    </object-type>
+    <object-type id="51" parent="24" name="NotificationType">
+      <ObjectId>88240</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376569</StateNumber>
+      <SubKind>enum</SubKind>
+      <SubCategory>enum</SubCategory>
+      <Labels>PUSH
+TAKE_OVER</Labels>
+    </object-type>
+    <object-type id="52" parent="24" name="ParametrizedValueSubTypes">
+      <ObjectId>88246</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376570</StateNumber>
+      <SubKind>enum</SubKind>
+      <SubCategory>enum</SubCategory>
+      <Labels>TOTAL
+MEALS_BREAKFAST
+MEALS_LUNCH
+MEALS_DINNER
+SOCIAL_SHARE
+SOCIAL_COMMENTS
+SOCIAL_POSTS
+SOCIAL_LIKES
+SOCIAL_SURVEY</Labels>
+    </object-type>
+    <object-type id="53" parent="24" name="ParametrizedValueTypes">
+      <ObjectId>88266</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376571</StateNumber>
+      <SubKind>enum</SubKind>
+      <SubCategory>enum</SubCategory>
+      <Labels>WATER_INTAKE
+STEPS_WALKED
+FRUIT_INTAKE
+SOCIAL_ACTIVITY</Labels>
+    </object-type>
+    <object-type id="54" parent="24" name="PrizeType">
+      <ObjectId>88276</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376572</StateNumber>
+      <SubKind>enum</SubKind>
+      <SubCategory>enum</SubCategory>
+      <Labels>AMAZON_GIFT_CARD
+CASH
+NIKE_STORE_CREDIT
+DIGITAL_ASSET</Labels>
+    </object-type>
+    <table id="55" parent="24" name="ActiveContest">
+      <ObjectId>88288</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376727</StateNumber>
+    </table>
+    <table id="56" parent="24" name="AdminPermission">
+      <ObjectId>88294</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376730</StateNumber>
+    </table>
+    <table id="57" parent="24" name="AdminSession">
+      <ObjectId>88302</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376728</StateNumber>
+    </table>
+    <table id="58" parent="24" name="AdminUser">
+      <ObjectId>88306</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376728</StateNumber>
+    </table>
+    <table id="59" parent="24" name="AdminUserPermission">
+      <ObjectId>88313</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376729</StateNumber>
+    </table>
+    <table id="60" parent="24" name="Audience">
+      <ObjectId>88349</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376731</StateNumber>
+    </table>
+    <table id="61" parent="24" name="AudienceUser">
+      <ObjectId>88355</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376731</StateNumber>
+    </table>
+    <table id="62" parent="24" name="ChatMessage">
+      <ObjectId>88360</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376733</StateNumber>
+    </table>
+    <table id="63" parent="24" name="CommunityPost">
+      <ObjectId>88369</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376736</StateNumber>
+    </table>
+    <table id="64" parent="24" name="CommunityPostComment">
+      <ObjectId>88376</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376735</StateNumber>
+    </table>
+    <table id="65" parent="24" name="CommunityPostLike">
+      <ObjectId>88385</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376737</StateNumber>
+    </table>
+    <table id="66" parent="24" name="CommunityPostShare">
+      <ObjectId>88391</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376739</StateNumber>
+    </table>
+    <table id="67" parent="24" name="CompaUser">
+      <ObjectId>88399</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376732</StateNumber>
+    </table>
+    <table id="68" parent="24" name="CompaUserStatus">
+      <ObjectId>88408</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376742</StateNumber>
+    </table>
+    <table id="69" parent="24" name="Contest">
+      <ObjectId>88318</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376727</StateNumber>
+    </table>
+    <table id="70" parent="24" name="ContestParticipant">
+      <ObjectId>88325</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376744</StateNumber>
+    </table>
+    <table id="71" parent="24" name="DeviceToken">
+      <ObjectId>88423</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376747</StateNumber>
+    </table>
+    <table id="72" parent="24" name="FruitAmountEnum">
+      <ObjectId>88434</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376621</StateNumber>
+    </table>
+    <table id="73" parent="24" name="GenderEnum">
+      <ObjectId>88440</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376743</StateNumber>
+    </table>
+    <table id="74" parent="24" name="Notification">
+      <ObjectId>88446</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376748</StateNumber>
+    </table>
+    <table id="75" parent="24" name="Parameter">
+      <ObjectId>88328</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376749</StateNumber>
+    </table>
+    <table id="76" parent="24" name="ParameterSet">
+      <ObjectId>88457</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376746</StateNumber>
+    </table>
+    <table id="77" parent="24" name="ParametrizedValue">
+      <ObjectId>88331</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376750</StateNumber>
+    </table>
+    <table id="78" parent="24" name="Prize">
+      <ObjectId>88464</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376760</StateNumber>
+    </table>
+    <table id="79" parent="24" name="ResetPasswordRequest">
+      <ObjectId>88474</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376752</StateNumber>
+    </table>
+    <table id="80" parent="24" name="Session">
+      <ObjectId>88477</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376753</StateNumber>
+    </table>
+    <table id="81" parent="24" name="TimeDependentUserData">
+      <ObjectId>88484</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376754</StateNumber>
+    </table>
+    <table id="82" parent="24" name="UsageEnum">
+      <ObjectId>88502</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376757</StateNumber>
+    </table>
+    <table id="83" parent="24" name="UserFriend">
+      <ObjectId>88510</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376755</StateNumber>
+    </table>
+    <table id="84" parent="24" name="UserOnboardingAnswers">
+      <ObjectId>88514</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376757</StateNumber>
+    </table>
+    <table id="85" parent="24" name="WalletTransaction">
+      <ObjectId>88489</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376759</StateNumber>
+    </table>
+    <view id="86" parent="24" name="AllTimesScore">
+      <ObjectId>88345</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376593</StateNumber>
+      <SourceTextLength>104</SourceTextLength>
+    </view>
+    <view id="87" parent="24" name="CurrentContestScore">
+      <ObjectId>88419</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376619</StateNumber>
+      <SourceTextLength>152</SourceTextLength>
+    </view>
+    <view id="88" parent="24" name="ParametrizedValueSum">
+      <ObjectId>88336</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376591</StateNumber>
+      <SourceTextLength>693</SourceTextLength>
+    </view>
+    <view id="89" parent="24" name="Score">
+      <ObjectId>88340</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376592</StateNumber>
+      <SourceTextLength>774</SourceTextLength>
+    </view>
+    <view id="90" parent="24" name="TotalBalancePerUser">
+      <ObjectId>88498</ObjectId>
+      <Owner>postgres</Owner>
+      <StateNumber>376638</StateNumber>
+      <SourceTextLength>152</SourceTextLength>
+    </view>
+    <routine id="91" parent="24" name="getactiveparameterid">
+      <ObjectId>88285</ObjectId>
+      <Owner>postgres</Owner>
+      <SourceTextLength>346</SourceTextLength>
+      <StateNumber>376573</StateNumber>
+      <VolatilityKind>immutable</VolatilityKind>
+      <ArgumentsDefinition>typ &quot;ParametrizedValueTypes&quot;</ArgumentsDefinition>
+      <ResultsDefinition>integer</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <routine id="92" parent="24" name="getscore">
+      <ObjectId>88287</ObjectId>
+      <Owner>postgres</Owner>
+      <SourceTextLength>343</SourceTextLength>
+      <StateNumber>376575</StateNumber>
+      <VolatilityKind>immutable</VolatilityKind>
+      <ArgumentsDefinition>points bigint, typ &quot;ParametrizedValueTypes&quot;, pid integer</ArgumentsDefinition>
+      <ResultsDefinition>double precision</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <routine id="93" parent="24" name="getscore">
+      <ObjectId>88286</ObjectId>
+      <Owner>postgres</Owner>
+      <SourceTextLength>247</SourceTextLength>
+      <StateNumber>376574</StateNumber>
+      <VolatilityKind>immutable</VolatilityKind>
+      <ArgumentsDefinition>points bigint, pid integer</ArgumentsDefinition>
+      <ResultsDefinition>double precision</ResultsDefinition>
+      <LanguageName>plpgsql</LanguageName>
+      <RoutineKind>function</RoutineKind>
+      <Cost>100.0</Cost>
+    </routine>
+    <column id="94" parent="55" name="ContestId">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376576</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="95" parent="55" name="Id">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376646</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;ActiveContest_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="96" parent="55" name="UniqueEntry">
+      <ObjectId>88595</ObjectId>
+      <StateNumber>376724</StateNumber>
+      <ColNames>ContestId</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="97" parent="55" name="UR2">
+      <ObjectId>88593</ObjectId>
+      <StateNumber>376723</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="98" parent="55" name="UniqueEntry">
+      <ObjectId>88596</ObjectId>
+      <StateNumber>376724</StateNumber>
+      <ColNames>ContestId</ColNames>
+      <UnderlyingIndexName>UniqueEntry</UnderlyingIndexName>
+    </key>
+    <key id="99" parent="55" name="UR2">
+      <ObjectId>88594</ObjectId>
+      <StateNumber>376723</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>UR2</UnderlyingIndexName>
+    </key>
+    <foreign-key id="100" parent="55" name="ActiveContest_ContestId_fkey">
+      <ObjectId>88601</ObjectId>
+      <StateNumber>376727</StateNumber>
+      <ColNames>ContestId</ColNames>
+      <RefTableId>88318</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Contest</RefTableName>
+      <RefKeyName>Contest_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <check id="101" parent="55" name="UR1">
+      <ObjectId>88291</ObjectId>
+      <StateNumber>376576</StateNumber>
+      <ColNames>Id</ColNames>
+      <Predicate>&quot;Id&quot; = 1</Predicate>
+    </check>
+    <column id="102" parent="56" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376647</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;AdminPermission_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="103" parent="56" name="Title">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376579</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="104" parent="56" name="Description">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376579</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="105" parent="56" name="AdminPermission_pkey">
+      <ObjectId>88543</ObjectId>
+      <StateNumber>376698</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="106" parent="56" name="AdminPermission_pkey">
+      <ObjectId>88544</ObjectId>
+      <StateNumber>376698</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>AdminPermission_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="107" parent="57" name="Token">
+      <Position>1</Position>
+      <DataType>char(64)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376582</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="108" parent="57" name="UserId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376582</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="109" parent="57" name="StartedAt">
+      <Position>3</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376582</StateNumber>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <TypeId>1184</TypeId>
+    </column>
+    <column id="110" parent="57" name="EndedAt">
+      <Position>4</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <StateNumber>376582</StateNumber>
+      <TypeId>1184</TypeId>
+    </column>
+    <index id="111" parent="57" name="AdminSession_pkey">
+      <ObjectId>88545</ObjectId>
+      <StateNumber>376699</StateNumber>
+      <ColNames>Token</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="112" parent="57" name="AdminSession_pkey">
+      <ObjectId>88546</ObjectId>
+      <StateNumber>376699</StateNumber>
+      <ColNames>Token</ColNames>
+      <UnderlyingIndexName>AdminSession_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="113" parent="57" name="AdminSession_UserId_fkey">
+      <ObjectId>88606</ObjectId>
+      <StateNumber>376728</StateNumber>
+      <ColNames>UserId</ColNames>
+      <RefTableId>88306</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>AdminUser</RefTableName>
+      <RefKeyName>AdminUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="114" parent="58" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376648</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;AdminUser_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="115" parent="58" name="UserName">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376583</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="116" parent="58" name="Password">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376583</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="117" parent="58" name="Email">
+      <Position>4</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376583</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="118" parent="58" name="CreatedAt">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376583</StateNumber>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="119" parent="58" name="AdminUser_pkey">
+      <ObjectId>88547</ObjectId>
+      <StateNumber>376700</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="120" parent="58" name="AdminUser_pkey">
+      <ObjectId>88548</ObjectId>
+      <StateNumber>376700</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>AdminUser_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="121" parent="59" name="PermissionId">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376584</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="122" parent="59" name="AdminUserId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376584</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="123" parent="59" name="AdminUserPermission_PermissionId_fkey">
+      <ObjectId>88616</ObjectId>
+      <StateNumber>376730</StateNumber>
+      <ColNames>PermissionId</ColNames>
+      <RefTableId>88294</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>AdminPermission</RefTableName>
+      <RefKeyName>AdminPermission_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="124" parent="59" name="AdminUserPermission_AdminUserId_fkey">
+      <ObjectId>88611</ObjectId>
+      <StateNumber>376729</StateNumber>
+      <ColNames>AdminUserId</ColNames>
+      <RefTableId>88306</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>AdminUser</RefTableName>
+      <RefKeyName>AdminUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="125" parent="60" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376649</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;Audience_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="126" parent="60" name="Label">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376594</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="127" parent="60" name="Audience_pkey">
+      <ObjectId>88549</ObjectId>
+      <StateNumber>376701</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="128" parent="60" name="Audience_pkey">
+      <ObjectId>88550</ObjectId>
+      <StateNumber>376701</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>Audience_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="129" parent="61" name="AudienceId">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376595</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="130" parent="61" name="UserId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376595</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <foreign-key id="131" parent="61" name="AudienceUser_AudienceId_fkey">
+      <ObjectId>88621</ObjectId>
+      <StateNumber>376731</StateNumber>
+      <ColNames>AudienceId</ColNames>
+      <RefTableId>88349</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Audience</RefTableName>
+      <RefKeyName>Audience_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="132" parent="61" name="AudienceUser_UserId_fkey">
+      <ObjectId>88626</ObjectId>
+      <StateNumber>376732</StateNumber>
+      <ColNames>UserId</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="133" parent="62" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376650</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;ChatMessage_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="134" parent="62" name="RecipientId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376598</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="135" parent="62" name="SenderId">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376598</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="136" parent="62" name="Message">
+      <Position>4</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376598</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="137" parent="62" name="AttachedImagePath">
+      <Position>5</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376598</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="138" parent="62" name="SentAt">
+      <Position>6</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376598</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1184</TypeId>
+    </column>
+    <index id="139" parent="62" name="ChatMessage_pkey">
+      <ObjectId>88551</ObjectId>
+      <StateNumber>376702</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="140" parent="62" name="ChatMessage_pkey">
+      <ObjectId>88552</ObjectId>
+      <StateNumber>376702</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>ChatMessage_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="141" parent="62" name="ChatMessage_RecipientId_fkey">
+      <ObjectId>88631</ObjectId>
+      <StateNumber>376733</StateNumber>
+      <ColNames>RecipientId</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="142" parent="62" name="ChatMessage_SenderId_fkey">
+      <ObjectId>88636</ObjectId>
+      <StateNumber>376734</StateNumber>
+      <ColNames>SenderId</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="143" parent="63" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376651</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;CommunityPost_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="144" parent="63" name="PosterId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376601</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="145" parent="63" name="ImageUrl">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>376601</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="146" parent="63" name="Content">
+      <Position>4</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376601</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="147" parent="63" name="PostedAt">
+      <Position>5</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376601</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1184</TypeId>
+    </column>
+    <index id="148" parent="63" name="CommunityPost_pkey">
+      <ObjectId>88559</ObjectId>
+      <StateNumber>376706</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="149" parent="63" name="CommunityPost_pkey">
+      <ObjectId>88560</ObjectId>
+      <StateNumber>376706</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>CommunityPost_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="150" parent="63" name="CommunityPost_PosterId_fkey">
+      <ObjectId>88671</ObjectId>
+      <StateNumber>376741</StateNumber>
+      <ColNames>PosterId</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="151" parent="64" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376652</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;CommunityPostComment_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="152" parent="64" name="PostId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376602</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="153" parent="64" name="CommenterId">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376602</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="154" parent="64" name="Comment">
+      <Position>4</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376602</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="155" parent="64" name="CommentedAt">
+      <Position>5</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376602</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1184</TypeId>
+    </column>
+    <index id="156" parent="64" name="CommunityPostComment_pkey">
+      <ObjectId>88553</ObjectId>
+      <StateNumber>376703</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="157" parent="64" name="CommunityPostComment_pkey">
+      <ObjectId>88554</ObjectId>
+      <StateNumber>376703</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>CommunityPostComment_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="158" parent="64" name="CommunityPostComment_PostId_fkey">
+      <ObjectId>88646</ObjectId>
+      <StateNumber>376736</StateNumber>
+      <ColNames>PostId</ColNames>
+      <RefTableId>88369</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CommunityPost</RefTableName>
+      <RefKeyName>CommunityPost_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="159" parent="64" name="CommunityPostComment_CommenterId_fkey">
+      <ObjectId>88641</ObjectId>
+      <StateNumber>376735</StateNumber>
+      <ColNames>CommenterId</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="160" parent="65" name="PostId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>378278</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="161" parent="65" name="LikedBy">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>378278</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="162" parent="65" name="LikedAt">
+      <Position>4</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376605</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1184</TypeId>
+    </column>
+    <index id="163" parent="65" name="CommunitPostLike_pkey">
+      <ObjectId>97117</ObjectId>
+      <StateNumber>378278</StateNumber>
+      <ColNames>PostId
+LikedBy</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="164" parent="65" name="CommunitPostLike_pkey">
+      <ObjectId>97118</ObjectId>
+      <StateNumber>378278</StateNumber>
+      <ColNames>PostId
+LikedBy</ColNames>
+      <UnderlyingIndexName>CommunitPostLike_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="165" parent="65" name="CommunityPostLike_PostId_fkey">
+      <ObjectId>88656</ObjectId>
+      <StateNumber>376738</StateNumber>
+      <ColNames>PostId</ColNames>
+      <RefTableId>88369</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CommunityPost</RefTableName>
+      <RefKeyName>CommunityPost_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="166" parent="65" name="CommunityPostLike_LikedBy_fkey">
+      <ObjectId>88651</ObjectId>
+      <StateNumber>376737</StateNumber>
+      <ColNames>LikedBy</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="167" parent="66" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376654</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;CommunityPostShare_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="168" parent="66" name="PostId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376608</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="169" parent="66" name="SharedBy">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376608</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="170" parent="66" name="SharedAt">
+      <Position>4</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376608</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1184</TypeId>
+    </column>
+    <index id="171" parent="66" name="CommunityPostShare_pkey">
+      <ObjectId>88557</ObjectId>
+      <StateNumber>376705</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="172" parent="66" name="CommunityPostShare_pkey">
+      <ObjectId>88558</ObjectId>
+      <StateNumber>376705</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>CommunityPostShare_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="173" parent="66" name="CommunityPostShare_PostId_fkey">
+      <ObjectId>88661</ObjectId>
+      <StateNumber>376739</StateNumber>
+      <ColNames>PostId</ColNames>
+      <RefTableId>88369</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CommunityPost</RefTableName>
+      <RefKeyName>CommunityPost_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="174" parent="66" name="CommunityPostShare_SharedBy_fkey">
+      <ObjectId>88666</ObjectId>
+      <StateNumber>376740</StateNumber>
+      <ColNames>SharedBy</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="175" parent="67" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376655</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;CompaUser_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="176" parent="67" name="FullName">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376613</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="177" parent="67" name="Email">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376613</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="178" parent="67" name="DateOfBirth">
+      <Position>4</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376613</StateNumber>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="179" parent="67" name="PhoneNumber">
+      <Position>5</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376613</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="180" parent="67" name="Password">
+      <Position>6</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376613</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="181" parent="67" name="HasConfirmedPhoneNumber">
+      <Position>7</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376613</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="182" parent="67" name="HasConfirmedEmail">
+      <Position>8</Position>
+      <DataType>boolean|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376613</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="183" parent="67" name="Gender">
+      <Position>9</Position>
+      <DataType>char|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376613</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="184" parent="67" name="CreatedAt">
+      <Position>10</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376613</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="185" parent="67" name="AvatarUrl">
+      <Position>11</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>376613</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="186" parent="67" name="UserName">
+      <Position>12</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376613</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="187" parent="67" name="CompaUser_pkey">
+      <ObjectId>88563</ObjectId>
+      <StateNumber>376708</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="188" parent="67" name="CompaUser_pkey">
+      <ObjectId>88564</ObjectId>
+      <StateNumber>376708</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>CompaUser_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="189" parent="67" name="CompaUser_Gender_fkey">
+      <ObjectId>88681</ObjectId>
+      <StateNumber>376743</StateNumber>
+      <ColNames>Gender</ColNames>
+      <RefTableId>88440</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>GenderEnum</RefTableName>
+      <RefKeyName>GenderEnum_pkey</RefKeyName>
+      <RefColNames>Short</RefColNames>
+    </foreign-key>
+    <column id="190" parent="68" name="UserId">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376614</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="191" parent="68" name="StoreCreditInCents">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376614</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="192" parent="68" name="WalletAmountInCents">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376614</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="193" parent="68" name="Score">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376614</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="194" parent="68" name="StatusDate">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376614</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <index id="195" parent="68" name="CompaUserStatus_pkey">
+      <ObjectId>88561</ObjectId>
+      <StateNumber>376707</StateNumber>
+      <ColNames>UserId
+StatusDate</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="196" parent="68" name="CompaUserStatus_pkey">
+      <ObjectId>88562</ObjectId>
+      <StateNumber>376707</StateNumber>
+      <ColNames>UserId
+StatusDate</ColNames>
+      <UnderlyingIndexName>CompaUserStatus_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="197" parent="68" name="CompaUserStatus_UserId_fkey">
+      <ObjectId>88676</ObjectId>
+      <StateNumber>376742</StateNumber>
+      <ColNames>UserId</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="198" parent="69" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376656</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;Contest_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="199" parent="69" name="StartDate">
+      <Position>2</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376587</StateNumber>
+      <DefaultExpression>CURRENT_DATE</DefaultExpression>
+      <TypeId>1184</TypeId>
+    </column>
+    <column id="200" parent="69" name="EndDate">
+      <Position>3</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376587</StateNumber>
+      <TypeId>1184</TypeId>
+    </column>
+    <column id="201" parent="69" name="CashPrizeInCents">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376587</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="202" parent="69" name="CompaCreditPrizeInCents">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376587</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="203" parent="69" name="ParameterSetId">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376587</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="204" parent="69" name="Recurring">
+      <Position>7</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>376587</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="205" parent="69" name="CompaCoins">
+      <Position>8</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376587</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="206" parent="69" name="Status">
+      <Position>9</Position>
+      <DataType>&quot;ContestStatus&quot;|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376587</StateNumber>
+      <DefaultExpression>&apos;SCHEDULED&apos;::public.&quot;ContestStatus&quot;</DefaultExpression>
+      <TypeId>88198</TypeId>
+    </column>
+    <index id="207" parent="69" name="Contest_pkey">
+      <ObjectId>88567</ObjectId>
+      <StateNumber>376710</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="208" parent="69" name="Contest_pkey">
+      <ObjectId>88568</ObjectId>
+      <StateNumber>376710</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>Contest_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="209" parent="69" name="Contest_ParameterSetId_fkey">
+      <ObjectId>88696</ObjectId>
+      <StateNumber>376746</StateNumber>
+      <ColNames>ParameterSetId</ColNames>
+      <RefTableId>88457</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>ParameterSet</RefTableName>
+      <RefKeyName>ParameterSet_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="210" parent="70" name="ContestId">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376588</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="211" parent="70" name="ParticipantId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376588</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="212" parent="70" name="ContestParticipant_pkey">
+      <ObjectId>88565</ObjectId>
+      <StateNumber>376709</StateNumber>
+      <ColNames>ContestId
+ParticipantId</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="213" parent="70" name="ContestParticipant_pkey">
+      <ObjectId>88566</ObjectId>
+      <StateNumber>376709</StateNumber>
+      <ColNames>ContestId
+ParticipantId</ColNames>
+      <UnderlyingIndexName>ContestParticipant_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="214" parent="70" name="ContestParticipant_ContestId_fkey">
+      <ObjectId>88686</ObjectId>
+      <StateNumber>376744</StateNumber>
+      <ColNames>ContestId</ColNames>
+      <RefTableId>88318</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Contest</RefTableName>
+      <RefKeyName>Contest_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="215" parent="70" name="ContestParticipant_ParticipantId_fkey">
+      <ObjectId>88691</ObjectId>
+      <StateNumber>376745</StateNumber>
+      <ColNames>ParticipantId</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="216" parent="71" name="UserId">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376620</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="217" parent="71" name="Device">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376620</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="218" parent="71" name="Token">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>376620</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="219" parent="71" name="Type">
+      <Position>4</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>376620</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="220" parent="71" name="Available">
+      <Position>5</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>376620</StateNumber>
+      <DefaultExpression>true</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="221" parent="71" name="CreatedAt">
+      <Position>6</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376620</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1184</TypeId>
+    </column>
+    <index id="222" parent="71" name="DeviceToken_pkey">
+      <ObjectId>88571</ObjectId>
+      <StateNumber>376712</StateNumber>
+      <ColNames>Device</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="223" parent="71" name="DeviceToken_Token_key">
+      <ObjectId>88569</ObjectId>
+      <StateNumber>376711</StateNumber>
+      <ColNames>Token</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="224" parent="71" name="DeviceToken_pkey">
+      <ObjectId>88572</ObjectId>
+      <StateNumber>376712</StateNumber>
+      <ColNames>Device</ColNames>
+      <UnderlyingIndexName>DeviceToken_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="225" parent="71" name="DeviceToken_Token_key">
+      <ObjectId>88570</ObjectId>
+      <StateNumber>376711</StateNumber>
+      <ColNames>Token</ColNames>
+      <UnderlyingIndexName>DeviceToken_Token_key</UnderlyingIndexName>
+    </key>
+    <foreign-key id="226" parent="71" name="DeviceToken_UserId_fkey">
+      <ObjectId>88701</ObjectId>
+      <StateNumber>376747</StateNumber>
+      <ColNames>UserId</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="227" parent="72" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376621</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="228" parent="72" name="Value">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376621</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="229" parent="72" name="FruitAmountEnum_pkey">
+      <ObjectId>88573</ObjectId>
+      <StateNumber>376713</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="230" parent="72" name="FruitAmountEnum_pkey">
+      <ObjectId>88574</ObjectId>
+      <StateNumber>376713</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>FruitAmountEnum_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="231" parent="73" name="Short">
+      <Position>1</Position>
+      <DataType>char|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376622</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="232" parent="73" name="Description">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376622</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="233" parent="73" name="GenderEnum_pkey">
+      <ObjectId>88577</ObjectId>
+      <StateNumber>376715</StateNumber>
+      <ColNames>Short</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="234" parent="73" name="GenderEnum_Description_key">
+      <ObjectId>88575</ObjectId>
+      <StateNumber>376714</StateNumber>
+      <ColNames>Description</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="235" parent="73" name="GenderEnum_pkey">
+      <ObjectId>88578</ObjectId>
+      <StateNumber>376715</StateNumber>
+      <ColNames>Short</ColNames>
+      <UnderlyingIndexName>GenderEnum_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="236" parent="73" name="GenderEnum_Description_key">
+      <ObjectId>88576</ObjectId>
+      <StateNumber>376714</StateNumber>
+      <ColNames>Description</ColNames>
+      <UnderlyingIndexName>GenderEnum_Description_key</UnderlyingIndexName>
+    </key>
+    <column id="237" parent="74" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376657</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;Notification_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="238" parent="74" name="Template">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>376623</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="239" parent="74" name="Group">
+      <Position>3</Position>
+      <DataType>&quot;NotificationGroups&quot;|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376623</StateNumber>
+      <TypeId>88206</TypeId>
+    </column>
+    <column id="240" parent="74" name="SubGroup">
+      <Position>4</Position>
+      <DataType>&quot;NotificationSubGroups&quot;|0s</DataType>
+      <StateNumber>376623</StateNumber>
+      <TypeId>88216</TypeId>
+    </column>
+    <column id="241" parent="74" name="Enabled">
+      <Position>5</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>376623</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="242" parent="74" name="Audience">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376623</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="243" parent="74" name="Type">
+      <Position>7</Position>
+      <DataType>&quot;NotificationType&quot;|0s</DataType>
+      <StateNumber>376623</StateNumber>
+      <TypeId>88240</TypeId>
+    </column>
+    <column id="244" parent="74" name="ScheduledFor">
+      <Position>8</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376623</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1184</TypeId>
+    </column>
+    <index id="245" parent="74" name="Notification_pkey">
+      <ObjectId>88581</ObjectId>
+      <StateNumber>376717</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="246" parent="74" name="Notification_Template_key">
+      <ObjectId>88579</ObjectId>
+      <StateNumber>376716</StateNumber>
+      <ColNames>Template</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="247" parent="74" name="Notification_pkey">
+      <ObjectId>88582</ObjectId>
+      <StateNumber>376717</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>Notification_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <key id="248" parent="74" name="Notification_Template_key">
+      <ObjectId>88580</ObjectId>
+      <StateNumber>376716</StateNumber>
+      <ColNames>Template</ColNames>
+      <UnderlyingIndexName>Notification_Template_key</UnderlyingIndexName>
+    </key>
+    <foreign-key id="249" parent="74" name="Notification_Audience_fkey">
+      <ObjectId>88706</ObjectId>
+      <StateNumber>376748</StateNumber>
+      <ColNames>Audience</ColNames>
+      <RefTableId>88349</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Audience</RefTableName>
+      <RefKeyName>Audience_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="250" parent="75" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376658</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;Parameter_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="251" parent="75" name="Type">
+      <Position>2</Position>
+      <DataType>&quot;ParametrizedValueTypes&quot;|0s</DataType>
+      <StateNumber>376589</StateNumber>
+      <TypeId>88266</TypeId>
+    </column>
+    <column id="252" parent="75" name="Max">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376589</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="253" parent="75" name="Representation">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376589</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="254" parent="75" name="ParameterSetId">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376589</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="255" parent="75" name="Parameter_pkey">
+      <ObjectId>88585</ObjectId>
+      <StateNumber>376719</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="256" parent="75" name="Parameter_pkey">
+      <ObjectId>88586</ObjectId>
+      <StateNumber>376719</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>Parameter_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="257" parent="75" name="Parameter_ParameterSetId_fkey">
+      <ObjectId>88711</ObjectId>
+      <StateNumber>376749</StateNumber>
+      <ColNames>ParameterSetId</ColNames>
+      <RefTableId>88457</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>ParameterSet</RefTableName>
+      <RefKeyName>ParameterSet_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="258" parent="76" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376659</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;ParameterSet_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="259" parent="76" name="ParameterSet_pkey">
+      <ObjectId>88583</ObjectId>
+      <StateNumber>376718</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="260" parent="76" name="ParameterSet_pkey">
+      <ObjectId>88584</ObjectId>
+      <StateNumber>376718</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>ParameterSet_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="261" parent="77" name="Type">
+      <Position>1</Position>
+      <DataType>&quot;ParametrizedValueTypes&quot;|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376590</StateNumber>
+      <TypeId>88266</TypeId>
+    </column>
+    <column id="262" parent="77" name="UserId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376590</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="263" parent="77" name="Value">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376590</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="264" parent="77" name="TrackingDate">
+      <Position>4</Position>
+      <DataType>date|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376590</StateNumber>
+      <DefaultExpression>CURRENT_DATE</DefaultExpression>
+      <TypeId>1082</TypeId>
+    </column>
+    <column id="265" parent="77" name="SubType">
+      <Position>5</Position>
+      <DataType>&quot;ParametrizedValueSubTypes&quot;|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376590</StateNumber>
+      <DefaultExpression>&apos;TOTAL&apos;::public.&quot;ParametrizedValueSubTypes&quot;</DefaultExpression>
+      <TypeId>88246</TypeId>
+    </column>
+    <column id="266" parent="77" name="ContestId">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376590</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="267" parent="77" name="ParametrizedValue_pkey">
+      <ObjectId>88587</ObjectId>
+      <StateNumber>376720</StateNumber>
+      <ColNames>Type
+SubType
+UserId
+ContestId
+TrackingDate</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="268" parent="77" name="ParametrizedValue_pkey">
+      <ObjectId>88588</ObjectId>
+      <StateNumber>376720</StateNumber>
+      <ColNames>Type
+SubType
+UserId
+ContestId
+TrackingDate</ColNames>
+      <UnderlyingIndexName>ParametrizedValue_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="269" parent="77" name="ParametrizedValue_UserId_fkey">
+      <ObjectId>88721</ObjectId>
+      <StateNumber>376751</StateNumber>
+      <ColNames>UserId</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="270" parent="77" name="ParametrizedValue_ContestId_fkey">
+      <ObjectId>88716</ObjectId>
+      <StateNumber>376750</StateNumber>
+      <ColNames>ContestId</ColNames>
+      <RefTableId>88318</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Contest</RefTableName>
+      <RefKeyName>Contest_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="271" parent="78" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376660</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;Prize_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="272" parent="78" name="CompaCoins">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376631</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="273" parent="78" name="Description">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>376631</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="274" parent="78" name="Available">
+      <Position>4</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>376631</StateNumber>
+      <DefaultExpression>true</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="275" parent="78" name="Type">
+      <Position>5</Position>
+      <DataType>&quot;PrizeType&quot;|0s</DataType>
+      <StateNumber>376631</StateNumber>
+      <TypeId>88276</TypeId>
+    </column>
+    <index id="276" parent="78" name="Prize_pkey">
+      <ObjectId>88589</ObjectId>
+      <StateNumber>376721</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="277" parent="78" name="Prize_pkey">
+      <ObjectId>88590</ObjectId>
+      <StateNumber>376721</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>Prize_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="278" parent="79" name="UserId">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376634</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="279" parent="79" name="Token">
+      <Position>2</Position>
+      <DataType>char(64)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376634</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <foreign-key id="280" parent="79" name="ResetPasswordRequest_UserId_fkey">
+      <ObjectId>88726</ObjectId>
+      <StateNumber>376752</StateNumber>
+      <ColNames>UserId</ColNames>
+      <RefTableId>88306</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>AdminUser</RefTableName>
+      <RefKeyName>AdminUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="281" parent="80" name="Token">
+      <Position>1</Position>
+      <DataType>char(64)|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376635</StateNumber>
+      <TypeId>1042</TypeId>
+    </column>
+    <column id="282" parent="80" name="UserId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376635</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="283" parent="80" name="StartedAt">
+      <Position>3</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376635</StateNumber>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <TypeId>1184</TypeId>
+    </column>
+    <column id="284" parent="80" name="EndedAt">
+      <Position>4</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <StateNumber>376635</StateNumber>
+      <TypeId>1184</TypeId>
+    </column>
+    <column id="285" parent="80" name="DeviceId">
+      <Position>5</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>376635</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="286" parent="80" name="Session_pkey">
+      <ObjectId>88591</ObjectId>
+      <StateNumber>376722</StateNumber>
+      <ColNames>Token</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="287" parent="80" name="Session_pkey">
+      <ObjectId>88592</ObjectId>
+      <StateNumber>376722</StateNumber>
+      <ColNames>Token</ColNames>
+      <UnderlyingIndexName>Session_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="288" parent="80" name="Session_UserId_fkey">
+      <ObjectId>88731</ObjectId>
+      <StateNumber>376753</StateNumber>
+      <ColNames>UserId</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="289" parent="81" name="UserId">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376636</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="290" parent="81" name="WeightInKilograms">
+      <Position>2</Position>
+      <DataType>real|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376636</StateNumber>
+      <TypeId>700</TypeId>
+    </column>
+    <column id="291" parent="81" name="HeightInMeters">
+      <Position>3</Position>
+      <DataType>real|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376636</StateNumber>
+      <TypeId>700</TypeId>
+    </column>
+    <column id="292" parent="81" name="Age">
+      <Position>4</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376636</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="293" parent="81" name="TakenAt">
+      <Position>5</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376636</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1184</TypeId>
+    </column>
+    <column id="294" parent="81" name="CreatedAt">
+      <Position>6</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376636</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1184</TypeId>
+    </column>
+    <foreign-key id="295" parent="81" name="TimeDependentUserData_UserId_fkey">
+      <ObjectId>88736</ObjectId>
+      <StateNumber>376754</StateNumber>
+      <ColNames>UserId</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="296" parent="82" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376661</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;UsageEnum_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="297" parent="82" name="Description">
+      <Position>2</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376639</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="298" parent="82" name="Detail">
+      <Position>3</Position>
+      <DataType>varchar|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376639</StateNumber>
+      <TypeId>1043</TypeId>
+    </column>
+    <index id="299" parent="82" name="UsageEnum_pkey">
+      <ObjectId>88597</ObjectId>
+      <StateNumber>376725</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="300" parent="82" name="UsageEnum_pkey">
+      <ObjectId>88598</ObjectId>
+      <StateNumber>376725</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>UsageEnum_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="301" parent="83" name="UserId">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376642</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="302" parent="83" name="FriendId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376642</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="303" parent="83" name="CreatedAt">
+      <Position>3</Position>
+      <DataType>timestamp with time zone|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376642</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1184</TypeId>
+    </column>
+    <foreign-key id="304" parent="83" name="UserFriend_UserId_fkey">
+      <ObjectId>88746</ObjectId>
+      <StateNumber>376756</StateNumber>
+      <ColNames>UserId</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="305" parent="83" name="UserFriend_FriendId_fkey">
+      <ObjectId>88741</ObjectId>
+      <StateNumber>376755</StateNumber>
+      <ColNames>FriendId</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="306" parent="84" name="UserId">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376643</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="307" parent="84" name="UsageId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376643</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="308" parent="84" name="IncreaseFitness">
+      <Position>3</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>376643</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="309" parent="84" name="RecoverFromIllness">
+      <Position>4</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>376643</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="310" parent="84" name="GetAndGiveSupport">
+      <Position>5</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>376643</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="311" parent="84" name="ProvideFeedback">
+      <Position>6</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>376643</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="312" parent="84" name="EatHealthier">
+      <Position>7</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>376643</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="313" parent="84" name="MakeMoney">
+      <Position>8</Position>
+      <DataType>boolean|0s</DataType>
+      <StateNumber>376643</StateNumber>
+      <DefaultExpression>false</DefaultExpression>
+      <TypeId>16</TypeId>
+    </column>
+    <column id="314" parent="84" name="CreatedAt">
+      <Position>9</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376643</StateNumber>
+      <DefaultExpression>now()</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <foreign-key id="315" parent="84" name="UserOnboardingAnswers_UserId_fkey">
+      <ObjectId>88756</ObjectId>
+      <StateNumber>376758</StateNumber>
+      <ColNames>UserId</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="316" parent="84" name="UserOnboardingAnswers_UsageId_fkey">
+      <ObjectId>88751</ObjectId>
+      <StateNumber>376757</StateNumber>
+      <ColNames>UsageId</ColNames>
+      <RefTableId>88502</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>UsageEnum</RefTableName>
+      <RefKeyName>UsageEnum_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="317" parent="85" name="Id">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376662</StateNumber>
+      <DefaultExpression>nextval(&apos;public.&quot;WalletTransaction2_Id_seq&quot;&apos;::regclass)</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="318" parent="85" name="UserId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376637</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="319" parent="85" name="Value">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376637</StateNumber>
+      <DefaultExpression>0</DefaultExpression>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="320" parent="85" name="Comment">
+      <Position>4</Position>
+      <DataType>varchar|0s</DataType>
+      <StateNumber>376637</StateNumber>
+      <DefaultExpression>&apos;&apos;::character varying</DefaultExpression>
+      <TypeId>1043</TypeId>
+    </column>
+    <column id="321" parent="85" name="Date">
+      <Position>5</Position>
+      <DataType>timestamp|0s</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>376637</StateNumber>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <TypeId>1114</TypeId>
+    </column>
+    <column id="322" parent="85" name="ContestId">
+      <Position>6</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376637</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <column id="323" parent="85" name="PrizeId">
+      <Position>7</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376637</StateNumber>
+      <TypeId>23</TypeId>
+    </column>
+    <index id="324" parent="85" name="WalletTransaction2_pkey">
+      <ObjectId>88599</ObjectId>
+      <StateNumber>376726</StateNumber>
+      <ColNames>Id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="325" parent="85" name="WalletTransaction2_pkey">
+      <ObjectId>88600</ObjectId>
+      <StateNumber>376726</StateNumber>
+      <ColNames>Id</ColNames>
+      <UnderlyingIndexName>WalletTransaction2_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="326" parent="85" name="WalletTransaction2_UserId_fkey">
+      <ObjectId>88771</ObjectId>
+      <StateNumber>376761</StateNumber>
+      <ColNames>UserId</ColNames>
+      <RefTableId>88399</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>CompaUser</RefTableName>
+      <RefKeyName>CompaUser_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="327" parent="85" name="WalletTransaction2_ContestId_fkey">
+      <ObjectId>88761</ObjectId>
+      <StateNumber>376759</StateNumber>
+      <ColNames>ContestId</ColNames>
+      <RefTableId>88318</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Contest</RefTableName>
+      <RefKeyName>Contest_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <foreign-key id="328" parent="85" name="WalletTransaction2_PrizeId_fkey">
+      <ObjectId>88766</ObjectId>
+      <StateNumber>376760</StateNumber>
+      <ColNames>PrizeId</ColNames>
+      <RefTableId>88464</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>Prize</RefTableName>
+      <RefKeyName>Prize_pkey</RefKeyName>
+      <RefColNames>Id</RefColNames>
+    </foreign-key>
+    <column id="329" parent="86" name="Score">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>376593</StateNumber>
+    </column>
+    <column id="330" parent="86" name="UserId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376593</StateNumber>
+    </column>
+    <column id="331" parent="87" name="Score">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>376619</StateNumber>
+    </column>
+    <column id="332" parent="87" name="UserId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376619</StateNumber>
+    </column>
+    <column id="333" parent="88" name="Value">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>376591</StateNumber>
+    </column>
+    <column id="334" parent="88" name="TrackingDate">
+      <Position>2</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>376591</StateNumber>
+    </column>
+    <column id="335" parent="88" name="UserId">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376591</StateNumber>
+    </column>
+    <column id="336" parent="88" name="Type">
+      <Position>4</Position>
+      <DataType>&quot;ParametrizedValueTypes&quot;|0s</DataType>
+      <StateNumber>376591</StateNumber>
+    </column>
+    <column id="337" parent="88" name="ContestId">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376591</StateNumber>
+    </column>
+    <column id="338" parent="89" name="UserId">
+      <Position>1</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376592</StateNumber>
+    </column>
+    <column id="339" parent="89" name="Type">
+      <Position>2</Position>
+      <DataType>&quot;ParametrizedValueTypes&quot;|0s</DataType>
+      <StateNumber>376592</StateNumber>
+    </column>
+    <column id="340" parent="89" name="Score">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376592</StateNumber>
+    </column>
+    <column id="341" parent="89" name="TrackingDate">
+      <Position>4</Position>
+      <DataType>date|0s</DataType>
+      <StateNumber>376592</StateNumber>
+    </column>
+    <column id="342" parent="89" name="ContestId">
+      <Position>5</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376592</StateNumber>
+    </column>
+    <column id="343" parent="90" name="Value">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+      <StateNumber>376638</StateNumber>
+    </column>
+    <column id="344" parent="90" name="UserId">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+      <StateNumber>376638</StateNumber>
+    </column>
+    <argument id="345" parent="91" name="typ">
+      <Position>1</Position>
+      <DataType>&quot;ParametrizedValueTypes&quot;|0s</DataType>
+    </argument>
+    <argument id="346" parent="91">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="347" parent="92" name="points">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+    </argument>
+    <argument id="348" parent="92" name="typ">
+      <Position>2</Position>
+      <DataType>&quot;ParametrizedValueTypes&quot;|0s</DataType>
+    </argument>
+    <argument id="349" parent="92" name="pid">
+      <Position>3</Position>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="350" parent="92">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>double precision|0s</DataType>
+    </argument>
+    <argument id="351" parent="93" name="points">
+      <Position>1</Position>
+      <DataType>bigint|0s</DataType>
+    </argument>
+    <argument id="352" parent="93" name="pid">
+      <Position>2</Position>
+      <DataType>integer|0s</DataType>
+    </argument>
+    <argument id="353" parent="93">
+      <ArgumentDirection>R</ArgumentDirection>
+      <DataType>double precision|0s</DataType>
+    </argument>
+  </database-model>
+</dataSource>
