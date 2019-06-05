@@ -29,7 +29,7 @@ type Type struct {
 }
 
 func (item *Type) DropStatement() string {
-	return fmt.Sprintf("DROP TYPE \"%s\";\n", item.name)
+	return fmt.Sprintf("DROP TYPE \"%s\" CASCADE;\n", item.name)
 }
 
 func (item *Type) CreateStatement() string {

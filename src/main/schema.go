@@ -20,7 +20,7 @@ func (schema *Schema) collectConstraints(db *sql.DB) error {
 		if table.kind == BaseTable {
 			table.constraints, err = getConstraints(db, *table, *schema)
 			if err != nil {
-				return  err
+				return err
 			}
 		}
 	}
@@ -95,7 +95,7 @@ func (schema *Schema) collectTables(db *sql.DB, catalog string, schemaName strin
 	var rows *sql.Rows
 	var err error
 	// First list the tables
-	if rows, err = db.Query(GET_TABLES, catalog, schemaName); err != nil {
+	if rows, err = db.Query(GetTables, catalog, schemaName); err != nil {
 		return err
 	}
 	for rows.Next() {
@@ -227,7 +227,7 @@ func (schema *Schema) Diff(target *Schema) (string, error) {
 		return "", err
 	}
 	builder.WriteString(tmp)
-	if  tmp, err = schema.examineIntersectingTables(target); err != nil {
+	if tmp, err = schema.examineIntersectingTables(target); err != nil {
 		return "", err
 	}
 	builder.WriteString(tmp)

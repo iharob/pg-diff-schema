@@ -18,7 +18,6 @@ type Constraint struct {
 	foreignKeys  []*Column
 }
 
-
 const GET_CONSTRAINTS string = `
 SELECT 
        conname, 
@@ -189,8 +188,8 @@ func stringifyKeys(keys []*Column) string {
 }
 
 func (constraint *Constraint) String() string {
-	var table *Table = constraint.table
-	switch constraint.kind  {
+	var table *Table = constraint.foreignTable
+	switch constraint.kind {
 	case PrimaryKey:
 		return fmt.Sprintf("PRIMARY KEY (\"%s\")", stringifyKeys(constraint.keys))
 	case ForeignKey:

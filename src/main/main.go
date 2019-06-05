@@ -8,7 +8,6 @@ import (
 
 const DSN_BASE string = "host=%s port=%d user=%s dbname=%s sslmode=disable password=%s"
 
-
 func main() {
 	var err error
 	var source *Schema

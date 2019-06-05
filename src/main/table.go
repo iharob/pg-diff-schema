@@ -7,7 +7,7 @@ import (
 	"strings"
 )
 
-const GET_TABLES string = `
+const GetTables string = `
 SELECT
   table_name,
   table_type,
@@ -134,7 +134,7 @@ func (table *Table) collectColumns(db *sql.DB) error {
 			&column.defaultValue,
 			&nullable,
 			&column.dataType,
-			&column.maxLength,
+			&column.length,
 		)
 		if err != nil {
 			return err
@@ -162,7 +162,7 @@ func (table *Table) hasConstraint(target *Constraint) (bool, error) {
 }
 
 func (table *Table) DropStatement() string {
-	return fmt.Sprintf("DROP TABLE \"%s\";\n", table.name)
+	return fmt.Sprintf("DROP TABLE IF EXISTS \"%s\";\n", table.name)
 }
 
 func (table *Table) CreateStatement() string {
@@ -182,7 +182,7 @@ func (table *Table) AddColumnStatement(column *Column) string {
 }
 
 func (table *Table) DropColumnStatement(column *Column) string {
-	return fmt.Sprintf("ALTER TABLE \"%s\" DROP COLUMN \"%s\";\n", table.name, column.name)
+	return fmt.Sprintf("ALTER TABLE \"%s\" DROP COLUMN IF EXISTS \"%s\";\n", table.name, column.name)
 }
 
 func (table *Table) Diff(target *Table) (string, error) {
@@ -207,21 +207,35 @@ func (table *Table) Diff(target *Table) (string, error) {
 	//
 	// Since this isn't really implemented in PostgreSQL we encourage the user
 	// of this program not to rely on column positions in their queries
-	// FIXME: IGNORING FOR NOW
 	/*moved, err = target.findAndUpdateMovedColumns(table.columns)
 	if err != nil {
 		return "", err
 	}
 	if table.kind == BaseTable && moved {
+		var tmpName string
+		var columns []string
 		for _, column := range table.columns {
-			var from int
-			if column.from != 0 {
-				from = column.from
-			} else {
-				from = column.position
-			}
+			columns = append(columns, fmt.Sprintf("\"%s\"::%s", column.name, column.dataType))
 		}
+		tmpName = "__replacing_table__"
+		builder.WriteString(fmt.Sprintf("ALTER TABLE \"%s\" DISABLE TRIGGER ALL;\n", table.name))
+		builder.WriteString(fmt.Sprintf("ALTER TABLE \"%s\" RENAME TO \"%s\";\n", table.name, tmpName))
+		builder.WriteString(table.CreateStatement());
+		builder.WriteString(fmt.Sprintf("INSERT INTO \"%s\" SELECT %s FROM \"%s\";\n", table.name, strings.Join(columns, ", "), tmpName))
+		builder.WriteString(fmt.Sprintf("DROP TABLE \"%s\" CASCADE;\n", table.name))
+		builder.WriteString(fmt.Sprintf("ALTER TABLE \"%s\" ENABLE TRIGGER ALL;\n", table.name))
 	}*/
+	for _, constraint := range constraints {
+		// FIXME: generate constraint creation code
+		builder.WriteString(fmt.Sprintf("ALTER TABLE \"%s\" ADD CONSTRAINT \"%s\"%s;\n", table.name, constraint.name, constraint))
+	}
+	// Drop obsolete constraints
+	if constraints, err = target.constraintSetDifference(table); err != nil {
+		return "", err
+	}
+	for _, constraint := range constraints {
+		builder.WriteString(fmt.Sprintf("ALTER TABLE \"%s\" DROP CONSTRAINT IF EXISTS \"%s\";\n", table.name, constraint.name))
+	}
 	// Generate drop obsolete columns
 	if columns, err = target.columnSetDifference(table); err != nil {
 		return "", err
@@ -240,18 +254,6 @@ func (table *Table) Diff(target *Table) (string, error) {
 	// Add new/missing constraints
 	if constraints, err = table.constraintSetDifference(target); err != nil {
 		return "", err
-	}
-	for _, constraint := range constraints {
-		// FIXME: generate constraint creation code
-		builder.WriteString(fmt.Sprintf("ALTER TABLE \"%s\" ADD CONSTRAINT \"%s\"%s;\n", table.name, constraint.name, constraint))
-	}
-	// Drop obsolete constraints
-	constraints, err = target.constraintSetDifference(table)
-	if err != nil {
-		return "", err
-	}
-	for _, constraint := range constraints {
-		builder.WriteString(fmt.Sprintf("ALTER TABLE \"%s\" DROP CONSTRAINT IF EXISTS \"%s\";\n", table.name, constraint.name))
 	}
 	return builder.String(), nil
 }

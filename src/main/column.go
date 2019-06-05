@@ -3,6 +3,7 @@ package main
 import (
 	"database/sql"
 	"fmt"
+	"strings"
 )
 
 const GET_COLUMNS string = `
@@ -27,27 +28,22 @@ type Column struct {
 	defaultValue interface{}
 	isNullable   bool
 	dataType     string
-	maxLength    sql.NullInt64
+	length       sql.NullInt64
 	table        *Table
 	constraints  []*Constraint
 	from         int
 }
 
 func (column Column) String() string {
-	var nullable string
-	var length string
+	var length sql.NullInt64
+	var code strings.Builder
+	code.WriteString(fmt.Sprintf("\"%s\" %s", column.name, column.dataType))
+	length = column.length
+	if length.Valid {
+		code.WriteString(fmt.Sprintf("(%d)", length.Int64))
+	}
 	if !column.isNullable {
-		nullable = " NOT NULL"
+		code.WriteString(" NOT NULL")
 	}
-	if column.maxLength.Valid {
-		var nullInt64 sql.NullInt64 = column.maxLength
-		length = fmt.Sprintf("(%d)", nullInt64.Int64)
-	}
-	return fmt.Sprintf(
-		"\"%s\" %s%s%s",
-		column.name,
-		column.dataType,
-		length,
-		nullable,
-	)
+	return code.String()
 }
