@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
+	"regexp"
 	"strings"
 )
 
@@ -34,11 +35,12 @@ type Table struct {
 	catalog     string
 }
 
-func (table *Table) FindColumnByName(name string) *Column {
+func (table *Table) FindColumn(search *Column) *Column {
 	for _, column := range table.columns {
-		if column.name == name {
-			return column
+		if column.name != search.name {
+			continue
 		}
+		return column
 	}
 	return nil
 }
@@ -66,31 +68,12 @@ func (table *Table) columnSetDifference(other *Table) ([]*Column, error) {
 	var difference []*Column
 	for _, column := range table.columns {
 		var found *Column
-		found = other.FindColumnByName(column.name)
+		found = other.FindColumn(column)
 		if found == nil {
 			difference = append(difference, column)
 		}
 	}
 	return difference, nil
-}
-
-func (table *Table) findAndUpdateMovedColumns(columns []*Column) (bool, error) {
-	var moved bool
-	// Columns columns current table that are ok in
-	// the target table
-	for _, column := range columns {
-		var found *Column
-		// First check that the column exists in the target table
-		found = table.FindColumnByName(column.name)
-		if found == nil {
-			continue
-		}
-		if found != table.FindColumnByPosition(column.position) {
-			column.from = found.position
-			moved = true
-		}
-	}
-	return moved, nil
 }
 
 func (table *Table) GetPrimaryKey() *Constraint {
@@ -119,19 +102,21 @@ func (table *Table) constraintSetDifference(target *Table) ([]*Constraint, error
 
 func (table *Table) collectColumns(db *sql.DB) error {
 	var rows *sql.Rows
+	var defaultValue interface{}
 	var err error
+	var sequence *Sequence
 	// First list the columns
-	rows, err = db.Query(GET_COLUMNS, table.name, table.catalog, table.schema)
+	rows, err = db.Query(GetColumns, table.name, table.catalog, table.schema)
 	if err != nil {
 		return err
 	}
 	for rows.Next() {
 		var nullable string
-		var column Column
+		var column *Column = &Column{}
 		err = rows.Scan(
 			&column.name,
 			&column.position,
-			&column.defaultValue,
+			&defaultValue,
 			&nullable,
 			&column.dataType,
 			&column.length,
@@ -140,11 +125,34 @@ func (table *Table) collectColumns(db *sql.DB) error {
 			return err
 		}
 		column.isNullable = nullable != "NO"
+		if defaultValue != nil {
+			sequence = getSequenceIfAny(defaultValue.(string), column)
+			if sequence == nil {
+				column.defaultValue = defaultValue
+			} else {
+				column.defaultValue = sequence
+			}
+		}
 		column.table = table
 		// Append to the array now that it's good
-		table.columns = append(table.columns, &column)
+		table.columns = append(table.columns, column)
 	}
 	return nil
+}
+
+func getSequenceIfAny(value string, column *Column) *Sequence {
+	var list [][]string
+	var re *regexp.Regexp
+	var sequence Sequence
+	re = regexp.MustCompile("nextval\\('\"([^\"]+)\"'::regclass\\)")
+	list = re.FindAllStringSubmatch(value, -1)
+	if len(list) == 1 {
+		sequence.column = column
+		sequence.name = list[0][1]
+	} else {
+		return nil
+	}
+	return &sequence
 }
 
 func (table *Table) hasConstraint(target *Constraint) (bool, error) {
@@ -185,10 +193,76 @@ func (table *Table) DropColumnStatement(column *Column) string {
 	return fmt.Sprintf("ALTER TABLE \"%s\" DROP COLUMN IF EXISTS \"%s\";\n", table.name, column.name)
 }
 
+func (table *Table) columnDiff(target *Table) (string, error) {
+	var defaultValue interface{}
+	var otherDefaultValue interface{}
+	var builder strings.Builder
+	for _, column := range target.columns {
+		var other *Column = table.FindColumn(column)
+		var table *Table = column.table
+		if other.dataType != column.dataType || other.length != column.length {
+			builder.WriteString(
+				fmt.Sprintf(
+					"ALTER TABLE \"%s\" ALTER COLUMN \"%s\" TYPE %s USING \"%s\"::%s;\n",
+					table.name,
+					column.name,
+					other.GetTypeString(),
+					column.name,
+					other.dataType,
+				),
+			)
+		}
+		defaultValue = column.defaultValue
+		otherDefaultValue = other.defaultValue
+		switch value := defaultValue.(type) {
+		case nil:
+			if other.defaultValue != nil {
+				var str, err = other.GetDefaultValue()
+				if err == nil {
+					builder.WriteString(
+						fmt.Sprintf(
+							"ALTER TABLE \"%s\" ALTER COLUMN \"%s\" SET DEFAULT %s;\n",
+							table.name,
+							column.name,
+							str,
+						),
+					)
+				}
+			}
+		case *Sequence:
+			switch otherValue := otherDefaultValue.(type) {
+			case nil:
+				builder.WriteString(fmt.Sprintf("DROP SEQUENCE IF EXISTS \"%s\";\n", value.name))
+				break
+			case *Sequence:
+				if value.name != otherValue.name {
+					builder.WriteString(fmt.Sprintf("DROP SEQUENCE IF EXISTS \"%s\";\n", otherValue.name))
+					builder.WriteString(
+						fmt.Sprintf(
+							"ALTER SEQUENCE \"%s\" RENAME TO \"%s\";\n",
+							value.name,
+							otherValue.name,
+						),
+					)
+				}
+			}
+			break
+		case string:
+			if value != other.defaultValue {
+				fmt.Printf("%s -> %s\n", other.defaultValue, value)
+				builder.WriteString(fmt.Sprintf("ALTER TABLE \"%s\" ALTER COLUMN \"%s\" DROP DEFAULT;\n", table.name, column.name))
+			}
+			break
+		}
+	}
+	return builder.String(), nil
+}
+
 func (table *Table) Diff(target *Table) (string, error) {
 	var err error
 	var constraints []*Constraint
 	var columns []*Column
+	var tmp string
 	// var moved bool
 	var builder strings.Builder
 	// Generate add column for new/columns columns
@@ -198,6 +272,10 @@ func (table *Table) Diff(target *Table) (string, error) {
 	for _, column := range columns {
 		builder.WriteString(table.AddColumnStatement(column))
 	}
+	if tmp, err = table.columnDiff(target); err != nil {
+		return "", err
+	}
+	builder.WriteString(tmp)
 	// Handle columns that are not in the right position, since this is VERY HARD
 	// we are just issuing a note about it, in future versions we can attempt to
 	// actually implement moving the columns.
@@ -225,13 +303,13 @@ func (table *Table) Diff(target *Table) (string, error) {
 		builder.WriteString(fmt.Sprintf("DROP TABLE \"%s\" CASCADE;\n", table.name))
 		builder.WriteString(fmt.Sprintf("ALTER TABLE \"%s\" ENABLE TRIGGER ALL;\n", table.name))
 	}*/
-	for _, constraint := range constraints {
-		// FIXME: generate constraint creation code
-		builder.WriteString(fmt.Sprintf("ALTER TABLE \"%s\" ADD CONSTRAINT \"%s\"%s;\n", table.name, constraint.name, constraint))
-	}
 	// Drop obsolete constraints
 	if constraints, err = target.constraintSetDifference(table); err != nil {
 		return "", err
+	}
+	for _, constraint := range constraints {
+		// FIXME: generate constraint creation code
+		builder.WriteString(fmt.Sprintf("ALTER TABLE \"%s\" ADD CONSTRAINT \"%s\"%s;\n", table.name, constraint.name, constraint))
 	}
 	for _, constraint := range constraints {
 		builder.WriteString(fmt.Sprintf("ALTER TABLE \"%s\" DROP CONSTRAINT IF EXISTS \"%s\";\n", table.name, constraint.name))

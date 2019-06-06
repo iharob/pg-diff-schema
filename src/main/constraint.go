@@ -18,7 +18,7 @@ type Constraint struct {
 	foreignKeys  []*Column
 }
 
-const GET_CONSTRAINTS string = `
+const GetConstraints string = `
 SELECT 
        conname, 
        contype, 
@@ -75,7 +75,7 @@ func getConstraints(db *sql.DB, table Table, schema Schema) ([]*Constraint, erro
 	var constraints []*Constraint
 	var err error
 	// First list the constraints
-	rows, err = db.Query(GET_CONSTRAINTS, table.name)
+	rows, err = db.Query(GetConstraints, table.name)
 	if err != nil {
 		return nil, err
 	}
@@ -198,6 +198,8 @@ func (constraint *Constraint) String() string {
 			table.name,
 			stringifyKeys(constraint.foreignKeys),
 		)
+	case Unique:
+		return fmt.Sprintf("UNIQUE (\"%s\")", stringifyKeys(constraint.keys))
 	}
 	return ""
 }

@@ -5,7 +5,7 @@ import (
 	"strings"
 )
 
-const GET_TYPES = `
+const GetTypes = `
 SELECT t.typname               AS name,
        ARRAY_AGG(e.enumlabel)  AS values,
        e.enumtypid IS NOT NULL AS is_enum

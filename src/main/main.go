@@ -6,7 +6,7 @@ import (
 	"os"
 )
 
-const DSN_BASE string = "host=%s port=%d user=%s dbname=%s sslmode=disable password=%s"
+const DsnBase string = "host=%s port=%d user=%s dbname=%s sslmode=disable password=%s"
 
 func main() {
 	var err error
@@ -30,5 +30,5 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	_, _ = file.WriteString(fmt.Sprintf("SET client_min_messages TO WARNING;\nBEGIN;\n%s\nROLLBACK;", sql))
+	_, _ = file.WriteString(fmt.Sprintf("SET client_min_messages TO WARNING;\nBEGIN;\n%sROLLBACK;\n\n", sql))
 }
