@@ -14,7 +14,9 @@ SELECT
   column_default,
   is_nullable,
   quote_ident(udt_name),
-  character_maximum_length
+  character_maximum_length,
+  numeric_precision,
+  numeric_scale
 FROM
   information_schema.columns
 WHERE
@@ -24,16 +26,18 @@ WHERE
 `
 
 type Column struct {
-	name            string
-	position        int
-	defaultValue    interface{}
-	isNullable      bool
-	dataType        string
-	length          sql.NullInt64
-	table           *Table
-	constraints     []*Constraint
-	from            int
-	isAutoincrement bool
+	name             string
+	position         int
+	defaultValue     interface{}
+	isNullable       bool
+	dataType         string
+	length           sql.NullInt64
+	table            *Table
+	constraints      []*Constraint
+	from             int
+	isAutoincrement  bool
+	numericPrecision sql.NullInt64
+	numericScale     sql.NullInt64
 }
 
 func (column *Column) GetTypeString() string {
@@ -73,4 +77,89 @@ func (column Column) String() string {
 		code.WriteString(" NOT NULL")
 	}
 	return code.String()
+}
+
+func (column *Column) Diff(target *Column) (string, error) {
+	var defaultValue interface{}
+	var otherDefaultValue interface{}
+	var table *Table
+	var builder strings.Builder
+	table = column.table
+	if column.isNullable && !target.isNullable {
+		builder.WriteString(
+			fmt.Sprintf("ALTER TABLE \"%s\" ALTER COLUMN \"%s\" SET NOT NULL;\n", table.name, column.name),
+		)
+	} else if !column.isNullable && target.isNullable {
+		builder.WriteString(
+			fmt.Sprintf("ALTER TABLE \"%s\" ALTER COLUMN \"%s\" DROP NOT NULL;\n", table.name, column.name),
+		)
+	}
+	if column.dataType == "\"numeric\"" && differentPrecisionOrScale(target, column) {
+	} else if target.dataType != column.dataType || target.length != column.length {
+		builder.WriteString(
+			fmt.Sprintf(
+				"ALTER TABLE \"%s\" ALTER COLUMN \"%s\" TYPE %s USING \"%s\"::%s;\n",
+				table.name,
+				column.name,
+				target.GetTypeString(),
+				column.name,
+				target.dataType,
+			),
+		)
+	}
+	defaultValue = column.defaultValue
+	otherDefaultValue = target.defaultValue
+	switch value := defaultValue.(type) {
+	case nil:
+		if target.defaultValue != nil {
+			var str, err = target.GetDefaultValue()
+			if err != nil {
+				return "", err
+			}
+			builder.WriteString(
+				fmt.Sprintf(
+					"ALTER TABLE \"%s\" ALTER COLUMN \"%s\" SET DEFAULT %s;\n",
+					table.name,
+					column.name,
+					str,
+				),
+			)
+		}
+	case *Sequence:
+		switch otherValue := otherDefaultValue.(type) {
+		case nil:
+			builder.WriteString(fmt.Sprintf("DROP SEQUENCE IF EXISTS \"%s\";\n", value.name))
+			break
+		case *Sequence:
+			if value.name != otherValue.name {
+				builder.WriteString(
+					fmt.Sprintf(
+						"ALTER SEQUENCE \"%s\" RENAME TO \"%s\";\n",
+						value.name,
+						otherValue.name,
+					),
+				)
+			}
+		}
+		break
+	case string:
+		if value != target.defaultValue {
+			builder.WriteString(
+				fmt.Sprintf("ALTER TABLE \"%s\" ALTER COLUMN \"%s\" DROP DEFAULT;\n", table.name, column.name),
+			)
+		}
+		break
+	}
+	return builder.String(), nil
+}
+
+func nullIntAreEqual(a sql.NullInt64, b sql.NullInt64) bool {
+	if !a.Valid && !b.Valid {
+		return true
+	}
+	return a.Int64 == b.Int64
+}
+
+func differentPrecisionOrScale(a *Column, b *Column) bool {
+	return nullIntAreEqual(a.numericPrecision, b.numericPrecision) && nullIntAreEqual(a.numericScale, b.numericScale)
 }

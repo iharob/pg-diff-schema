@@ -79,7 +79,7 @@ func (schema *Schema) tableSetDifference(other *Schema) ([]*Table, error) {
 	for _, table := range schema.tables {
 		var found *Table
 		found = other.FindTableByName(table.name)
-		if found == nil {
+		if found == nil || found.kind == View {
 			tables = append(tables, table)
 		}
 	}
@@ -152,8 +152,13 @@ func (schema *Schema) collectSequences(db *sql.DB) error {
 	return nil
 }
 
+func removeSemicolon(statement string) string {
+	return strings.Trim(statement, ";")
+}
+
 func (schema *Schema) collectTables(db *sql.DB, catalog string, schemaName string) error {
 	var rows *sql.Rows
+	var viewDefinition sql.NullString
 	var err error
 	// First list the tables
 	if rows, err = db.Query(GetTables, catalog, schemaName); err != nil {
@@ -166,8 +171,12 @@ func (schema *Schema) collectTables(db *sql.DB, catalog string, schemaName strin
 			&table.kind,
 			&table.schema,
 			&table.catalog,
+			&viewDefinition,
 		); err != nil {
 			return err
+		}
+		if viewDefinition.Valid {
+			table.viewDefinition = removeSemicolon(viewDefinition.String)
 		}
 		schema.tables = append(schema.tables, &table)
 	}
@@ -309,11 +318,11 @@ func (schema *Schema) Diff(target *Schema) (string, error) {
 		return "", err
 	}
 	builder.WriteString(tmp)
-	if tmp, err = schema.generateNeededCreateTableStatements(target); err != nil {
+	if tmp, err = schema.generateNeededDropTableStatements(target); err != nil {
 		return "", err
 	}
 	builder.WriteString(tmp)
-	if tmp, err = schema.generateNeededDropTableStatements(target); err != nil {
+	if tmp, err = schema.generateNeededCreateTableStatements(target); err != nil {
 		return "", err
 	}
 	builder.WriteString(tmp)
