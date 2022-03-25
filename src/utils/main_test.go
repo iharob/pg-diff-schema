@@ -2,7 +2,8 @@ package utils_test
 
 import (
 	"testing"
-	"utils"
+
+	"alasimi.com/pg-diff-schema/src/utils"
 )
 
 func TestArrayParser(t *testing.T) {

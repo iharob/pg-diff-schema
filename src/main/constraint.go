@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"strconv"
 	"strings"
-	"utils"
+
+	"alasimi.com/pg-diff-schema/src/utils"
 )
 
 type ConstraintType string
@@ -63,7 +64,7 @@ func getAllKeys(keys stringArray, table *Table) ([]*Column, error) {
 		}
 		column = table.FindColumnByPosition(position)
 		if column == nil {
-			return nil, fmt.Errorf("column `%d' not found in table `%s'", position, table.name)
+			return nil, nil // fmt.Errorf("column `%d' not found in table `%s'", position, table.name)
 		}
 		columns = append(columns, column)
 	}
@@ -193,6 +194,9 @@ func (constraint *Constraint) String() string {
 	case PrimaryKey:
 		return fmt.Sprintf("PRIMARY KEY (\"%s\")", stringifyKeys(constraint.keys))
 	case ForeignKey:
+		if table == nil {
+			return ""
+		}
 		return fmt.Sprintf("FOREIGN KEY (\"%s\") REFERENCES \"%s\" (\"%s\")",
 			stringifyKeys(constraint.keys),
 			table.name,

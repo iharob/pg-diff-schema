@@ -48,6 +48,9 @@ func (table *Table) FindColumn(search *Column) *Column {
 }
 
 func (table *Table) FindColumnByPosition(position int) *Column {
+	if table == nil {
+		return nil
+	}
 	for _, column := range table.columns {
 		if column.position == position {
 			return column

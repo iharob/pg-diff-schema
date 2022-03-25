@@ -5,7 +5,8 @@ import (
 	"fmt"
 	"log"
 	"strings"
-	"utils"
+
+	"alasimi.com/pg-diff-schema/src/utils"
 )
 
 type Schema struct {
@@ -104,7 +105,8 @@ func (schema *Schema) collectTypes(db *sql.DB, schemaName string) error {
 			return err
 		}
 		if !item.isEnum {
-			panic("item is not enum")
+			continue
+			// return errors.New("item was expected to be an enum, but it is not")
 		}
 		if err = utils.ParseArray(array, &item.values); err != nil {
 			return err
